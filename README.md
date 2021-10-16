@@ -196,8 +196,25 @@ Here are some tips:
 
 To get the first matching result, use `.re_first()`.
 
+### Storing the scraped data
 
-Reference:
+Scrapy can export the data to a local or remote file with several format. Such
+as JSON, JSON lines, CSV, and XML. Currently supported remote storage are FTP,
+S3 and Google Cloud Storage (GCS).
+
+Now we store the result to local file with JSON format:
+
+``` shell
+scrapy crawl quotes -O quotes.json
+```
+
+
+
+
+
+
+
+## Reference
 
 - [Official Scrapy Tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
 - [Zvon.org XPath 1.0 Tutorial](http://www.zvon.org/comp/r/tut-XPath_1.html#intro)
