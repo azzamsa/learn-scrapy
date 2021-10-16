@@ -132,6 +132,46 @@ same built-in feature.
 ['image1.html', 'image2.html', 'image3.html', 'image4.html', 'image5.html']
 ```
 
+Some Xpath expression:
+
+- `/foo/bar/baz`: select all `baz` element that are childern of `/foo/bar`.
+- `//foo/bar/baz`: select all `baz` element that are childern of `/bar`.
+- `/foo/bar/*`: select all element under `/foo/bar`.
+- `/foo/bar/baz[1]`: select the first `baz` child of element `/foo/bar`.
+- `/foo/bar/baz[last]`: select the first `last` child of element `/foo/bar`.
+- `//bar[@id='bar1']`: select all `bar` element which attribute id is `bar1`.
+  - other attribute value selector are: `@name`.
+- `//*[count(bar)=2]`: select element that has two `bar` children.
+- `//*[count(*)=2]`: selecet any element that has two children.
+- `//*[name()='bar']`: select any `bar` element. Simmiliar with `//bar`.
+- `//*[string-length(name()) = 3]`: select any element with 3 letter character.
+  - we can use other comparison here: `<`, `>`.
+- `/foo/bar/descendant::*`: select all descendant of `/foo/bar`.
+- `//foo/descendant::*`: select all elements which have `foo` among *its ancestors*.
+- `//baz/parent::*`: select all parents of `baz` element.
+- `/foo/bar/baz/ancestor::*`: select all acestor of `baz`.
+- `/foo/bar/following-sibling::*`: select following sibling of `bar`.
+- `/foo/bar/preceding-sibling::*`: select preceding sibling of `bar`.
+- `/foo/bar/following::*`: select the axis after `bar`.
+- `/foo/bar/preceding::*`: select the axis before `bar`.
+- `/foo/bar/descendant-or-self::*`: select the context node and the descendant.
+- `/foo/bar/ancestor-or-self::*`: select the context node and the ancestor.
+
+Other interesting functions are:
+
+- `//bar[normalize-space(@name)='b1']`: remove leading and trailing spaces before comparison
+- `//*[starts-with(name(),'b')]`: select any element *starts* with b.
+- `//*[contains(name(),'b')]`: select any element which *contain* c.
+- `//bar[position() mod 2 = 0 ]`: select even `bar` elements.
+
+The expression also can be combined using `|`:
+
+- `//foo | //bar`: select all element matching both expression
+
+At this point you realize that using XPath is too verbose. Scrapy selectors
+allow you to chain selectors, so most of the time you can just select by class
+using CSS and then switch to XPath when needed.
+
 ### Regular Expressions Selector
 
 ``` python
@@ -145,6 +185,11 @@ same built-in feature.
 
 To get the first matching result, use `.re_first()`.
 
+
+Reference:
+
+- [Official Scrapy Tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
+- [Zvon.org XPath 1.0 Tutorial](http://www.zvon.org/comp/r/tut-XPath_1.html#intro)
 
 [scrapy-tutorial]: https://docs.scrapy.org/en/latest/intro/tutorial.html
 [css-extension]: https://docs.scrapy.org/en/latest/topics/selectors.html#extensions-to-css-selectors
