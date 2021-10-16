@@ -213,11 +213,24 @@ scrapy crawl quotes -O quotes.json
 To follow the links, get the next-page link using a selector, then build a
 absolute link using `urljoin(url)`.
 
+`response.follow` is a shortcut for `scrapy.Request()` that automatically build
+the absolute URL for you.
 
+Other that automatic absolutr URL buider, it also able to recieve a selector as argument.
 
+``` python
+for href in response.css('ul.pager a::attr(href)'):
+    yield response.follow(href, callback=self.parse)
+```
 
+and able to extract `href` automatically.
 
+``` python
+for a in response.css('ul.pager a'):
+    yield response.follow(a, callback=self.parse)
+```
 
+To create multiple request for iterable, use `follow_all()`.
 
 
 
