@@ -117,7 +117,7 @@ other libraries like `lxml` or `PyQuery`.
 'Quotes to Scrape'
 ```
 
-In contrast to Scrapy custom CSS selector such ``::attr(...)`, XPath has the
+In contrast to Scrapy custom CSS selector such `::attr(...)`, XPath has the
 same built-in feature.
 
 ``` python
@@ -172,7 +172,7 @@ The expression also can be combined using `|`:
 allow you to chain selectors, so most of the time you can just select by class
 using CSS and then switch to XPath when needed.
 
-Most of the time, we will be working with relative xpath.
+Most of the time, we will be working with relative XPath.
 Here are some tips:
 
 - To get the `<p>` element inside `<div>`:
@@ -198,11 +198,11 @@ To get the first matching result, use `.re_first()`.
 
 ### Storing the scraped data
 
-Scrapy can export the data to a local or remote file with several format. Such
+Scrapy can export the data to a local or remote file with several formats. Such
 as JSON, JSON lines, CSV, and XML. Currently supported remote storage are FTP,
 S3 and Google Cloud Storage (GCS).
 
-Now we store the result to local file with JSON format:
+Now we store the result in a local file with JSON format:
 
 ``` shell
 scrapy crawl quotes -O quotes.json
@@ -216,7 +216,7 @@ absolute link using `urljoin(url)`.
 `response.follow` is a shortcut for `scrapy.Request()` that automatically build
 the absolute URL for you.
 
-Other that automatic absolutr URL buider, it also able to recieve a selector as argument.
+Other than automatic absolute URL builder, it is also able to receive a selector as an argument.
 
 ``` python
 for href in response.css('ul.pager a::attr(href)'):
@@ -230,7 +230,7 @@ for a in response.css('ul.pager a'):
     yield response.follow(a, callback=self.parse)
 ```
 
-To create multiple request for iterable, use `follow_all()`.
+To create multiple requests for iterable, use `follow_all()`.
 
 
 
