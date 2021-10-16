@@ -168,9 +168,20 @@ The expression also can be combined using `|`:
 
 - `//foo | //bar`: select all element matching both expression
 
-At this point you realize that using XPath is too verbose. Scrapy selectors
+📝 At this point you realize that using XPath is too verbose. Scrapy selectors
 allow you to chain selectors, so most of the time you can just select by class
 using CSS and then switch to XPath when needed.
+
+Most of the time, we will be working with relative xpath.
+Here are some tips:
+
+- To get the `<p>` element inside `<div>`:
+
+``` python
+>>> divs = response.xpath('//div')
+>>> for p in divs.xpath('.//p'):  # without the '.', it will get the `<p>` from whole document
+    print(p.get())
+```
 
 ### Regular Expressions Selector
 
@@ -190,6 +201,7 @@ Reference:
 
 - [Official Scrapy Tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
 - [Zvon.org XPath 1.0 Tutorial](http://www.zvon.org/comp/r/tut-XPath_1.html#intro)
+- [Scrapy Selector Documentation](https://docs.scrapy.org/en/latest/topics/selectors.html)
 
 [scrapy-tutorial]: https://docs.scrapy.org/en/latest/intro/tutorial.html
 [css-extension]: https://docs.scrapy.org/en/latest/topics/selectors.html#extensions-to-css-selectors
