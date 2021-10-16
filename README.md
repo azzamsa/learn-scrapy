@@ -208,6 +208,13 @@ Now we store the result to local file with JSON format:
 scrapy crawl quotes -O quotes.json
 ```
 
+### Following links
+
+To follow the links, get the next-page link using a selector, then build a
+absolute link using `urljoin(url)`.
+
+
+
 
 
 
