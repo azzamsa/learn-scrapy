@@ -54,14 +54,17 @@ scrapy shell 'http://quotes.toscrape.com/page/1/'
 ['Quotes to Scrape']
 ```
 
-## CSS Selector
+## Selector
+
+A selector is a mechanism for extracting data, either by XPath or CSS expressions.
+Scrapy uses `parsel` under the hood, which in turn uses `lxml`. A popular python XML parsing library.
 
 ``` python
->>> response.css('title').getall()
-['<title>Quotes to Scrape</title>']
+>>> response.xpath('//span/text()').get()
+'good'
 
->>> response.css('title::text').getall()
-['Quotes to Scrape']
+>>> response.css('span::text').get()
+'good'
 ```
 
 `.get()` always returns a single result; if there are several matches, the content of
@@ -74,23 +77,24 @@ To avoid having `None` from `.get()`, use `default=''`
 >>> response.css('img::text').get(default='')
 ```
 
-Using CSS3 pseudo-elements we can refine the result.
-`::text` to select/extract text-only element. Otherwise, we get the tags included.
-
-Use `.attrib` to return attributes for the first matching element.
-
-``` python
->>> response.css('img').attrib['src']
-'image1_thumb.jpg'
-
->>> # or
->>> response.css('img::attr(src)').get()
-'image1_thumb.jpg'
-```
-
 📝 `.get()` and `.getall()` is the new scrapy method that are equivalent to
 `.extract_first()` and `.extract()`. The difference is that the former always
 return predictable result, single and list.
+
+## CSS Selector
+
+``` python
+>>> response.css('title').getall()
+['<title>Quotes to Scrape</title>']
+
+>>> response.css('title::text').getall()
+['Quotes to Scrape']
+```
+
+The basics of CSS selectors are tags, class, id, and attribute.
+Tags selected using its name, such `p` and `h1`. Class selected using a dot, id using a hashtag, and attribute using `.attrib`.
+
+Other than using Scrapy shell to find an item using CSS selector, [SelectorGadget](https://selectorgadget.com/) is a handy visual alternative.
 
 ## Extensions to CSS Selectors
 
