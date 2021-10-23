@@ -1,6 +1,6 @@
 # Quotes Scraper
 
-A scraper for http://quotes.toscrape.com .
+A scraper for [quotes.toscrape.com](http://quotes.toscrape.com).
 
 ## Getting Started
 
