@@ -3,7 +3,7 @@
 Starting a new project.
 
 ``` shell
-scrapy startproject tutorial
+scrapy startproject quotes
 ```
 
 Minimal working example.

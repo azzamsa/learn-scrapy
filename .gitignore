@@ -3,7 +3,5 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-quotes/quotes.jl
-
-tutorial/*.html
-tutorial/*.json
+*/quotes/*.json
+*/basic/*.json
