@@ -25,6 +25,6 @@ class QuotesSpider(scrapy.Spider):
         if next_page is not None:
             # for learning purpose, 3 page is enough
             page_number = next_page.split("/")[2]
-            print(page_number)
+            self.logger.info(f'Current page: {page_number}')
             if int(page_number) < 3:
                 yield response.follow(next_page, callback=self.parse)
