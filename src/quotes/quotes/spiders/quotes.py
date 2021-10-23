@@ -5,8 +5,7 @@ class QuotesSpider(scrapy.Spider):
     name = "quotes"  # must be unique
 
     start_urls = [
-        "http://quotes.toscrape.com/page/1/",
-        "http://quotes.toscrape.com/page/2/",
+        "https://quotes.toscrape.com/",
     ]
 
     def parse(self, response):
@@ -24,4 +23,8 @@ class QuotesSpider(scrapy.Spider):
 
         next_page = response.css("li.next a::attr(href)").get()
         if next_page is not None:
-            yield response.follow(next_page, callback=self.parse)
+            # for learning purpose, 3 page is enough
+            page_number = next_page.split("/")[2]
+            print(page_number)
+            if int(page_number) < 3:
+                yield response.follow(next_page, callback=self.parse)
