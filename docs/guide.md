@@ -94,6 +94,10 @@ return predictable result, single and list.
 The basics of CSS selectors are tags, class, id, and attribute.
 Tags selected using its name, such `p` and `h1`. Class selected using a dot, id using a hashtag, and attribute using `.attrib`.
 
+Some examples:
+- `div.quote`: select `quote` class in `div` tag.
+- `div.tags a.tag`: space means a descendant. Select a `tag` class in `a` tag under `div.tags`.
+
 Other than using Scrapy shell to find an item using CSS selector, [SelectorGadget](https://selectorgadget.com/) is a handy visual alternative.
 
 ## Extensions to CSS Selectors

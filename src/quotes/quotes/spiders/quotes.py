@@ -1,4 +1,5 @@
 import scrapy
+
 from ..items import QoutesItem
 
 
@@ -13,13 +14,8 @@ class QuotesSpider(scrapy.Spider):
         items = QoutesItem()
 
         for quote in response.css("div.quote"):
-            # `foo.bar` the dot operator to access the class
-            # `::text` to extract the text only
             text = quote.css("span.text::text").get()
             author = quote.css("small.author::text").get()
-            # `div.tags`, `tags` is a class
-            # `a.tag`, `tag` is a class
-            # a space denotes a children element
             tags = quote.css("div.tags a.tag::text").getall()
 
             items["text"] = text
