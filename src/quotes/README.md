@@ -2,6 +2,17 @@
 
 A scraper for [quotes.toscrape.com](http://quotes.toscrape.com).
 
+## Lesson Learned
+
+- Project structure
+- `scrapy.Spider`
+- Shell
+- CSS selector
+- Logger
+- Feed exports
+- Items & Items Pipeline
+- Sqlite & Many-to-many database architecture
+
 ## Getting Started
 
 ``` shell
