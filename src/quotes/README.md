@@ -15,6 +15,25 @@ $ pip install -r requirements.txt
 $ scrapy startproject quotes
 
 $ # start crawling
-$ # -O to overwrite, -o to append
-$ scrapy crawl quotes -O quotes.json
+$ # create database (remove if exists)
+$ sqlite3 quotes.db < schema.sql
+
+$ scrapy crawl quotes
+```
+
+To see the crawled quotes:
+
+``` sql
+SELECT
+    q.id,
+    q.text,
+    q.author,
+    GROUP_CONCAT(t.tag,', ') AS tags
+FROM
+    quotes q
+    JOIN quotes_tags qt ON
+        q.id = qt.quotes_id
+    JOIN tags t ON
+        qt.tags_id = t.id
+GROUP BY q.id
 ```
