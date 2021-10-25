@@ -11,22 +11,22 @@ class QuotesSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        items = QoutesItem()
+        item = QoutesItem()
 
         for quote in response.css("div.quote"):
             text = quote.css("span.text::text").get()
             author = quote.css("small.author::text").get()
             tags = quote.css("div.tags a.tag::text").getall()
 
-            items["text"] = text
-            items["author"] = author
-            items["tags"] = tags
+            item["text"] = text
+            item["author"] = author
+            item["tags"] = tags
 
             author_page = quote.css(".author + a ::attr(href)").get()
             yield scrapy.Request(
                 f"https://quotes.toscrape.com{author_page}",
                 callback=self.parse_author,
-                meta={"items": items},
+                meta={"item": item},
             )
 
         next_page = response.css("li.next a::attr(href)").get()
@@ -42,8 +42,8 @@ class QuotesSpider(scrapy.Spider):
         location = response.css(".author-born-location::text").get()
         location = location[3:]  # strip `in`
 
-        items = response.meta["items"]
-        items["date"] = date
-        items["location"] = location
+        item = response.meta["items"]
+        item["date"] = date
+        item["location"] = location
 
-        return items
+        return item
