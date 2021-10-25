@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*.scrapy
 */basic/*.json
-
 */quotes/*.json
 */quotes/*.db
