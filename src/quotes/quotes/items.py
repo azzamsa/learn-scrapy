@@ -10,4 +10,6 @@ class QoutesItem(scrapy.Item):
     # define the fields for your item here like:
     text = scrapy.Field()
     author = scrapy.Field()
+    location = scrapy.Field()
+    date = scrapy.Field()
     tags = scrapy.Field()
