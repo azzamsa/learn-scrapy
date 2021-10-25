@@ -26,7 +26,7 @@ class QuotesSpider(scrapy.Spider):
             yield scrapy.Request(
                 f"https://quotes.toscrape.com{author_page}",
                 callback=self.parse_author,
-                meta={"item": item},
+                cb_kwargs={"item": item},
             )
 
         next_page = response.css("li.next a::attr(href)").get()
@@ -37,12 +37,11 @@ class QuotesSpider(scrapy.Spider):
             if int(page_number) < 3:
                 yield response.follow(next_page, callback=self.parse)
 
-    def parse_author(self, response):
+    def parse_author(self, response, item):
         date = response.css(".author-born-date::text").get()
         location = response.css(".author-born-location::text").get()
         location = location[3:]  # strip `in`
 
-        item = response.meta["items"]
         item["date"] = date
         item["location"] = location
 
