@@ -40,7 +40,7 @@ class QuotesSpider(scrapy.Spider):
     def parse_author(self, response, item):
         date = response.css(".author-born-date::text").get()
         location = response.css(".author-born-location::text").get()
-        location = location[3:]  # strip `in`
+        location = location.replace("in ", "")  # strip `in`
 
         item["date"] = date
         item["location"] = location
