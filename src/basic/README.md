@@ -12,5 +12,5 @@ $ vf activate global3 # in this case I am using virtualfish
 $ pip install -r requirements.txt
 
 $ # start crawling
-$ scrapy runspider main.py -o quotes.json
+$ scrapy runspider quotes.py -O quotes.json
 ```
