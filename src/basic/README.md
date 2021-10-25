@@ -14,3 +14,5 @@ $ pip install -r requirements.txt
 $ # start crawling
 $ scrapy runspider quotes.py -O quotes.json
 ```
+
+The `quotes.json` will contains exactly 100 quotes. Otherwise, it doesn't work properly.
