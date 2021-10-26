@@ -12,9 +12,10 @@ class QuotesSpider(scrapy.Spider):
             tags = quote.css("div.tags a.tag::text").getall()
 
             author_page = quote.css(".author + a ::attr(href)").get()
-            yield scrapy.Request(
-                f"https://quotes.toscrape.com{author_page}",
+            yield response.follow(
+                author_page,
                 callback=self.parse_author,
+                dont_filter=True,
                 cb_kwargs={"author": author, "text": text, "tags": tags},
             )
 

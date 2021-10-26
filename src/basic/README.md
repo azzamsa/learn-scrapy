@@ -26,7 +26,7 @@ Some important lines are:
 - `Stored json feed (100 items)`. Check whether your crawled items are the same.
 - `request_method_count/GET`.
 
- <details>
+<details>
   <summary>quotes.py</summary>
   
   ```python
@@ -49,6 +49,33 @@ Some important lines are:
  'log_count/INFO': 11,
  'request_depth_max': 9,
  'response_received_count': 10,
+ ```
+  
+</details> 
+
+<details>
+  <summary>quotes_author.py</summary>
+  
+  ```python
+2021-10-26 07:25:57 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes_author.json
+2021-10-26 07:25:57 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 59416,
+ 'downloader/request_count': 210,
+ 'downloader/request_method_count/GET': 210,
+ 'downloader/response_bytes': 264437,
+ 'downloader/response_count': 210,
+ 'downloader/response_status_count/200': 110,
+ 'downloader/response_status_count/308': 100,
+ 'elapsed_time_seconds': 9.131498,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'httpcompression/response_bytes': 477498,
+ 'httpcompression/response_count': 110,
+ 'item_scraped_count': 100,
+ 'log_count/DEBUG': 310,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 10,
+ 'response_received_count': 110,
  ```
   
 </details> 
