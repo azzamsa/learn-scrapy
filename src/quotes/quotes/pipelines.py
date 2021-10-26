@@ -21,12 +21,34 @@ class QuotesPipeline:
         self.store(item)
         return item
 
-    def store(self, item):
+    def store_author(self, item):
         self.curr.execute(
-            "INSERT INTO quotes (text, author) values (?,?)",
+            "SELECT * FROM author WHERE name=?",
+            (item["author"],),
+        )
+        row = self.curr.fetchone()
+        if row:
+            author_id = row[0]
+        else:
+            self.curr.execute(
+                "INSERT INTO author (name, date, location) values (?,?,?)",
+                (
+                    item["author"],
+                    item["date"],
+                    item["location"],
+                ),
+            )
+            author_id = self.curr.lastrowid
+        return author_id
+
+    def store(self, item):
+        author_id = self.store_author(item)
+
+        self.curr.execute(
+            "INSERT INTO quotes (text, author_id) values (?,?)",
             (
                 item["text"],
-                item["author"],
+                author_id,
             ),
         )
         quotes_id = self.curr.lastrowid

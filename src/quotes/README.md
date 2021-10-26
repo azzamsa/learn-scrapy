@@ -38,14 +38,18 @@ To see the crawled quotes:
 SELECT
     q.id,
     q.text,
-    q.author,
+    a.name,
+    a.date,
+    a.location,
     GROUP_CONCAT(t.tag,', ') AS tags
 FROM
     quotes q
     JOIN quotes_tags qt ON
-        q.id = qt.quotes_id
+        qt.quotes_id = q.id
     JOIN tags t ON
-        qt.tags_id = t.id
+        t.id = qt.tags_id
+    JOIN author a ON
+        a.id = q.author_id 
 GROUP BY q.id
 ```
 
