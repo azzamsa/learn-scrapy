@@ -29,7 +29,7 @@ Some important lines are:
 <details>
   <summary>quotes.py</summary>
   
-  ```python
+```python
 2021-10-26 07:03:32 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes.json
 2021-10-26 07:03:32 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 2652,
@@ -49,14 +49,14 @@ Some important lines are:
  'log_count/INFO': 11,
  'request_depth_max': 9,
  'response_received_count': 10,
- ```
+```
   
 </details> 
 
 <details>
   <summary>quotes_author.py</summary>
   
-  ```python
+```python
 2021-10-26 07:25:57 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes_author.json
 2021-10-26 07:25:57 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 59416,
@@ -76,6 +76,6 @@ Some important lines are:
  'log_count/INFO': 11,
  'request_depth_max': 10,
  'response_received_count': 110,
- ```
+```
   
 </details> 
