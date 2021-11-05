@@ -1,0 +1,34 @@
+import scrapy
+from scrapy.http import FormRequest
+
+
+class QuotesSpider(scrapy.Spider):
+    name = "quotes"
+    start_urls = ["http://quotes.toscrape.com/login"]
+
+    def parse(self, response):
+        token = response.css("form input::attr(value)").get()
+        self.logger.info(f"::: Token: {token}")
+
+        return FormRequest.from_response(
+            response,
+            formdata={
+                "csrf_token": token,
+                "username": "albattani",
+                "password": "365days",
+            },
+            callback=self.scrape,
+        )
+
+    def scrape(self, response):
+        for quote in response.css("div.quote"):
+            yield {
+                "author": quote.css("small.author::text").get(),
+                "text": quote.css("span.text::text").get(),
+                "tags": quote.css("div.tags a.tag::text").getall(),
+            }
+
+        next_page = response.css('li.next a::attr("href")').get()
+        self.logger.info(f"::: Next page: {next_page}")
+        if next_page is not None:
+            yield response.follow(next_page, self.scrape)

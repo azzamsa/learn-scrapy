@@ -79,3 +79,38 @@ Some important lines are:
 ```
   
 </details> 
+
+<details>
+  <summary>quotes_formdata.py</summary>
+ 
+2021-11-06 06:54:44 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes_formdata.json
+2021-11-06 06:54:44 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 5240,
+ 'downloader/request_count': 12,
+ 'downloader/request_method_count/GET': 11,
+ 'downloader/request_method_count/POST': 1,
+ 'downloader/response_bytes': 26203,
+ 'downloader/response_count': 12,
+ 'downloader/response_status_count/200': 11,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 5.875017,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 11, 5, 23, 54, 44, 955492),
+ 'httpcompression/response_bytes': 119041,
+ 'httpcompression/response_count': 11,
+ 'item_scraped_count': 100,
+ 'log_count/DEBUG': 112,
+ 'log_count/INFO': 22,
+ 'memusage/max': 57581568,
+ 'memusage/startup': 57581568,
+ 'request_depth_max': 10,
+ 'response_received_count': 11,
+ 'scheduler/dequeued': 12,
+ 'scheduler/dequeued/memory': 12,
+ 'scheduler/enqueued': 12,
+ 'scheduler/enqueued/memory': 12,
+ 'start_time': datetime.datetime(2021, 11, 5, 23, 54, 39, 80475)}
+2021-11-06 06:54:44 [scrapy.core.engine] INFO: Spider closed (finished)
+
+</details> 
