@@ -12,7 +12,11 @@ $ vf activate global3 # in this case I am using virtualfish
 $ pip install -r requirements.txt
 
 $ # start crawling
-$ scrapy runspider quotes.py -O quotes.json
+$ scrapy runspider quotes.py -O output/quotes.json
+
+$ # other crawlers
+$ scrapy runspider quotes_author.py -O output/quotes_author.json
+$ scrapy runspider quotes_formdata.py -O output/quotes_formdata.json
 ```
 
 The `quotes.json` will contain exactly 100 quotes. Otherwise, it doesn't work properly.
