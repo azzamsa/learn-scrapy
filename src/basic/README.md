@@ -123,3 +123,40 @@ Some important lines are:
 ```
 
 </details>
+
+
+<details>
+  <summary>books_category.py</summary>
+
+``` python
+2021-11-07 06:40:33 [scrapy.extensions.feedexport] INFO: Stored json feed (1000 items) in: output/books_category.json
+
+2021-11-07 06:40:33 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 392955,
+ 'downloader/request_count': 1081,
+ 'downloader/request_method_count/GET': 1081,
+ 'downloader/response_bytes': 4446627,
+ 'downloader/response_count': 1081,
+ 'downloader/response_status_count/200': 1081,
+ 'elapsed_time_seconds': 50.523608,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 11, 6, 23, 40, 33, 683622),
+ 'httpcompression/response_bytes': 22569527,
+ 'httpcompression/response_count': 1081,
+ 'item_scraped_count': 1000,
+ 'log_count/DEBUG': 2081,
+ 'log_count/INFO': 1091,
+ 'memusage/max': 57569280,
+ 'memusage/startup': 57569280,
+ 'request_depth_max': 9,
+ 'response_received_count': 1081,
+ 'scheduler/dequeued': 1081,
+ 'scheduler/dequeued/memory': 1081,
+ 'scheduler/enqueued': 1081,
+ 'scheduler/enqueued/memory': 1081,
+ 'start_time': datetime.datetime(2021, 11, 6, 23, 39, 43, 160014)}
+2021-11-07 06:40:33 [scrapy.core.engine] INFO: Spider closed (finished)
+```
+
+</details>
