@@ -12,6 +12,7 @@ A scraper for [quotes.toscrape.com](http://quotes.toscrape.com).
 - Feed exports
 - Items & Items Pipeline
 - Sqlite & Many-to-many database architecture
+- Parsing nested page
 
 ## Getting Started
 
