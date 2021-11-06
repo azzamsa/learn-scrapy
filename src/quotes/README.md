@@ -49,7 +49,7 @@ FROM
     JOIN tags t ON
         t.id = qt.tags_id
     JOIN author a ON
-        a.id = q.author_id 
+        a.id = q.author_id
 GROUP BY q.id
 ```
 
@@ -59,8 +59,8 @@ GROUP BY q.id
   <summary>quotes spider</summary>
 
 ```python
-2021-10-26 07:35:39 [scrapy.core.engine] INFO: Closing spider (finished)
 2021-10-26 07:35:39 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes.json
+
 2021-10-26 07:35:39 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 55314,
  'downloader/request_count': 211,
@@ -94,5 +94,5 @@ GROUP BY q.id
  'start_time': datetime.datetime(2021, 10, 26, 0, 35, 37, 246694)}
 2021-10-26 07:35:39 [scrapy.core.engine] INFO: Spider closed (finished)
 ```
-  
-</details> 
+
+</details>

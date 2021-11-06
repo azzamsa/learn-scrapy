@@ -31,6 +31,7 @@ Some important lines are:
 
 ```python
 2021-10-26 07:03:32 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes.json
+
 2021-10-26 07:03:32 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 2652,
  'downloader/request_count': 10,
@@ -58,6 +59,7 @@ Some important lines are:
 
 ```python
 2021-10-26 07:25:57 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes_author.json
+
 2021-10-26 07:25:57 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 59416,
  'downloader/request_count': 210,
@@ -83,7 +85,9 @@ Some important lines are:
 <details>
   <summary>quotes_formdata.py</summary>
 
+``` python
 2021-11-06 06:54:44 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: quotes_formdata.json
+
 2021-11-06 06:54:44 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {'downloader/request_bytes': 5240,
  'downloader/request_count': 12,
@@ -112,5 +116,6 @@ Some important lines are:
  'scheduler/enqueued/memory': 12,
  'start_time': datetime.datetime(2021, 11, 5, 23, 54, 39, 80475)}
 2021-11-06 06:54:44 [scrapy.core.engine] INFO: Spider closed (finished)
+```
 
 </details>
