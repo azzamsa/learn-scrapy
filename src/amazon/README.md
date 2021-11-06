@@ -13,7 +13,11 @@ A scraper for [amazon.com](https://amazon.com).
 $ # take a look at a previous projects
 
 $ # start crawling
-$ scrapy crawl amazon_spider -O amazon.json
+$ scrapy crawl amazon_spider -O output/amazon.json
+
+$ # others
+$ scrapy crawl amazon_spider -O output/amazon_google_bots.json
+$ scrapy crawl amazon_spider -O output/amazon_scrapy_user_agents.json
 ```
 
 
@@ -103,6 +107,49 @@ $ scrapy crawl amazon_spider -O amazon.json
  'scheduler/enqueued/memory': 2,
  'start_time': datetime.datetime(2021, 11, 6, 7, 11, 22, 697017)}
 2021-11-06 14:11:25 [scrapy.core.engine] INFO: Spider closed (finished)
+```
+
+</details>
+
+
+<details>
+  <summary>amazon spider (with scrapy-user-agents)</summary>
+
+``` python
+2021-11-06 14:47:59 [scrapy_user_agents.middlewares] DEBUG: Assigned User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+
+
+2021-11-06 14:21:14 [scrapy.extensions.feedexport] INFO: Stored json feed (48 items) in: amazon.json
+
+2021-11-06 14:21:14 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 637,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 138312,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 2.15178,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 11, 6, 7, 21, 14, 980845),
+ 'httpcompression/response_bytes': 935775,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 48,
+ 'log_count/DEBUG': 52,
+ 'log_count/INFO': 11,
+ 'log_count/WARNING': 45,
+ 'memusage/max': 59314176,
+ 'memusage/startup': 59314176,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2021, 11, 6, 7, 21, 12, 829065)}
+2021-11-06 14:21:14 [scrapy.core.engine] INFO: Spider closed (finished)
 ```
 
 </details>
