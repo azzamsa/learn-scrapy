@@ -23,7 +23,10 @@ class QuotesSpider(scrapy.Spider):
     def scrape(self, response):
         for quote in response.css("div.quote"):
             yield {
-                "author": quote.css("small.author::text").get(),
+                "author_name": quote.css("small.author::text").get(),
+                "author_url": quote.css(
+                    "small.author ~ a[href*='goodreads.com']::attr(href)"
+                ).get(),
                 "text": quote.css("span.text::text").get(),
                 "tags": quote.css("div.tags a.tag::text").getall(),
             }
