@@ -1,6 +1,6 @@
 # One File Scraper
 
-This is the simplest working example of a Scrapy scraper.
+The collection of one single file scrapy scraper.
 
 List of the scrapers:
 - `quotes.py`: Scrape all the quotes from [quotes.toscrape.com](https://quotes.toscrape.com/). The most basic example.
