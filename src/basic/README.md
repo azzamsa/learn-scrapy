@@ -6,6 +6,7 @@ List of the scrapers:
 - `quotes.py`: scrape all the quotes from [quotes.toscrape.com](https://quotes.toscrape.com/)
 - `quotes_author.py`: scrape all the quotes and the author details. Featuring parsing nested page.
 - `quotes_formdata.py`: scrape all the quotes using `FormRequest` authentification.
+- `quotes_scroll.py`: scrape all the quotes from AJAX-based infinite scrolling pagination.
 - `books_category.py`: scrape all the books from [books.toscrape.com](https://books.toscrape.com/) via its category. Featuring three-level nested parsings.
 
 ## Getting Started
@@ -164,6 +165,43 @@ Some important lines are:
  'scheduler/enqueued/memory': 1081,
  'start_time': datetime.datetime(2021, 11, 6, 23, 39, 43, 160014)}
 2021-11-07 06:40:33 [scrapy.core.engine] INFO: Spider closed (finished)
+```
+
+</details>
+
+
+<details>
+  <summary>quotes_scroll.py</summary>
+
+``` python
+2021-11-07 15:19:10 [scrapy.extensions.feedexport] INFO: Stored json feed (100 items) in: output/quotes_scroll.json
+
+2021-11-07 15:19:10 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2865,
+ 'downloader/request_count': 10,
+ 'downloader/request_method_count/GET': 10,
+ 'downloader/response_bytes': 14797,
+ 'downloader/response_count': 10,
+ 'downloader/response_status_count/200': 10,
+ 'elapsed_time_seconds': 6.074668,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2021, 11, 7, 8, 19, 10, 821333),
+ 'httpcompression/response_bytes': 30904,
+ 'httpcompression/response_count': 10,
+ 'item_scraped_count': 100,
+ 'log_count/DEBUG': 110,
+ 'log_count/INFO': 11,
+ 'memusage/max': 57372672,
+ 'memusage/startup': 57372672,
+ 'request_depth_max': 9,
+ 'response_received_count': 10,
+ 'scheduler/dequeued': 10,
+ 'scheduler/dequeued/memory': 10,
+ 'scheduler/enqueued': 10,
+ 'scheduler/enqueued/memory': 10,
+ 'start_time': datetime.datetime(2021, 11, 7, 8, 19, 4, 746665)}
+2021-11-07 15:19:10 [scrapy.core.engine] INFO: Spider closed (finished)
 ```
 
 </details>
