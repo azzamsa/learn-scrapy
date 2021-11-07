@@ -27,6 +27,7 @@ This project contains the scrapers below:
 
 - [one](src/one): The simplest working example of Scrapy scraper.
 - [quotes](src/quotes): A scraper for [quotes.toscrape.com](http://quotes.toscrape.com).
+- [quotes_js](src/quotes_js): A scraper for JavaScript generated content.
 - [books](src/books): A scraper for [books.toscrape.com](http://books.toscrape.com).
 - [amazon](src/amazon): A scraper for [amazon.com](http://amazon.com).
 
