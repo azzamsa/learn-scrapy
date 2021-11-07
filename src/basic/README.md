@@ -2,6 +2,12 @@
 
 This is the simplest working example of a Scrapy scraper.
 
+List of the scrapers:
+- `quotes.py`: scrape all the quotes from [quotes.toscrape.com](https://quotes.toscrape.com/)
+- `quotes_author.py`: scrape all the quotes and the author details. Featuring parsing nested page.
+- `quotes_formdata.py`: scrape all the quotes using `FormRequest` authentification.
+- `books_category.py`: scrape all the books from [books.toscrape.com](https://books.toscrape.com/) via its category. Featuring three-level nested parsings.
+
 ## Getting Started
 
 ``` shell
@@ -17,6 +23,7 @@ $ scrapy runspider quotes.py -O output/quotes.json
 $ # other crawlers
 $ scrapy runspider quotes_author.py -O output/quotes_author.json
 $ scrapy runspider quotes_formdata.py -O output/quotes_formdata.json
+$ scrapy runspider books_category.py -O output/books_category.json
 ```
 
 The `quotes.json` will contain exactly 100 quotes. Otherwise, it doesn't work properly.
