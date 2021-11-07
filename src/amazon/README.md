@@ -5,6 +5,8 @@ A scraper for [amazon.com](https://amazon.com).
 ## Lesson Learned
 
 - CSS selector
+- [Custom User-Agents](https://github.com/azzamsa/learn-scrapy/commit/ea91573275ab78016f5c9d4c31c7e8ef82ddfefe)
+- [scrapy-user-agents package](https://github.com/azzamsa/learn-scrapy/commit/509c450d99ba39b8438765f69b2ae1020209b152)
 
 
 ## Getting Started
