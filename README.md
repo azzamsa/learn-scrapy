@@ -25,7 +25,7 @@ Use the [guide](docs/guide.md) as a starting point.
 
 This project contains the scrapers below:
 
-- [basic](src/basic): The simplest working example of Scrapy scraper.
+- [one](src/one): The simplest working example of Scrapy scraper.
 - [quotes](src/quotes): A scraper for [quotes.toscrape.com](http://quotes.toscrape.com).
 - [books](src/books): A scraper for [books.toscrape.com](http://books.toscrape.com).
 - [amazon](src/amazon): A scraper for [amazon.com](http://amazon.com).

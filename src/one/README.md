@@ -1,9 +1,9 @@
-# Basic Scraper
+# One File Scraper
 
 This is the simplest working example of a Scrapy scraper.
 
 List of the scrapers:
-- `quotes.py`: scrape all the quotes from [quotes.toscrape.com](https://quotes.toscrape.com/)
+- `quotes.py`: crape all the quotes from [quotes.toscrape.com](https://quotes.toscrape.com/). The most basic example.
 - `quotes_author.py`: scrape all the quotes and the author details. Featuring parsing nested page.
 - `quotes_formdata.py`: scrape all the quotes using `FormRequest` authentification.
 - `quotes_scroll.py`: scrape all the quotes from AJAX-based infinite scrolling pagination.
