@@ -107,9 +107,9 @@ nodes or attribute values. `::text` and `::attr(name)` is [custom Scrapy
 (parsel) extension][css-extension] to CSS selectors.  It will not work with
 other libraries like `lxml` or `PyQuery`.
 
-- `title::text` selects children text nodes.
-- `*::text` selects all descendant text nodes.
-- `a::attr(href)` selects the href attribute value.
+- `title::text` Selects children text nodes.
+- `*::text` Selects all descendant text nodes.
+- `a::attr(href)` Selects the href attribute value.
 
 ## XPath Selector
 
@@ -135,39 +135,39 @@ same built-in feature.
 
 Some Xpath expression:
 
-- `/foo/bar/baz`: select all `baz` element that are childern of `/foo/bar`.
-- `//foo/bar/baz`: select all `baz` element that are childern of `/bar`.
-- `/foo/bar/*`: select all element under `/foo/bar`.
-- `/foo/bar/baz[1]`: select the first `baz` child of element `/foo/bar`.
-- `/foo/bar/baz[last]`: select the first `last` child of element `/foo/bar`.
-- `//bar[@id='bar1']`: select all `bar` element which attribute id is `bar1`.
+- `/foo/bar/baz`: Select all `baz` element that are childern of `/foo/bar`.
+- `//foo/bar/baz`: Select all `baz` element that are childern of `/bar`.
+- `/foo/bar/*`: Select all element under `/foo/bar`.
+- `/foo/bar/baz[1]`: Select the first `baz` child of element `/foo/bar`.
+- `/foo/bar/baz[last]`: Select the first `last` child of element `/foo/bar`.
+- `//bar[@id='bar1']`: Select all `bar` element which attribute id is `bar1`.
   - other attribute value selector are: `@name`.
-- `//*[count(bar)=2]`: select element that has two `bar` children.
+- `//*[count(bar)=2]`: Select element that has two `bar` children.
 - `//*[count(*)=2]`: selecet any element that has two children.
-- `//*[name()='bar']`: select any `bar` element. Simmiliar with `//bar`.
-- `//*[string-length(name()) = 3]`: select any element with 3 letter character.
+- `//*[name()='bar']`: Select any `bar` element. Simmiliar with `//bar`.
+- `//*[string-length(name()) = 3]`: Select any element with 3 letter character.
   - we can use other comparison here: `<`, `>`.
-- `/foo/bar/descendant::*`: select all descendant of `/foo/bar`.
-- `//foo/descendant::*`: select all elements which have `foo` among *its ancestors*.
-- `//baz/parent::*`: select all parents of `baz` element.
-- `/foo/bar/baz/ancestor::*`: select all acestor of `baz`.
-- `/foo/bar/following-sibling::*`: select following sibling of `bar`.
-- `/foo/bar/preceding-sibling::*`: select preceding sibling of `bar`.
-- `/foo/bar/following::*`: select the axis after `bar`.
-- `/foo/bar/preceding::*`: select the axis before `bar`.
-- `/foo/bar/descendant-or-self::*`: select the context node and the descendant.
-- `/foo/bar/ancestor-or-self::*`: select the context node and the ancestor.
+- `/foo/bar/descendant::*`: Select all descendant of `/foo/bar`.
+- `//foo/descendant::*`: Select all elements which have `foo` among *its ancestors*.
+- `//baz/parent::*`: Select all parents of `baz` element.
+- `/foo/bar/baz/ancestor::*`: Select all acestor of `baz`.
+- `/foo/bar/following-sibling::*`: Select following sibling of `bar`.
+- `/foo/bar/preceding-sibling::*`: Select preceding sibling of `bar`.
+- `/foo/bar/following::*`: Select the axis after `bar`.
+- `/foo/bar/preceding::*`: Select the axis before `bar`.
+- `/foo/bar/descendant-or-self::*`: Select the context node and the descendant.
+- `/foo/bar/ancestor-or-self::*`: Select the context node and the ancestor.
 
 Other interesting functions are:
 
 - `//bar[normalize-space(@name)='b1']`: remove leading and trailing spaces before comparison
-- `//*[starts-with(name(),'b')]`: select any element *starts* with b.
-- `//*[contains(name(),'b')]`: select any element which *contain* c.
-- `//bar[position() mod 2 = 0 ]`: select even `bar` elements.
+- `//*[starts-with(name(),'b')]`: Select any element *starts* with b.
+- `//*[contains(name(),'b')]`: Select any element which *contain* c.
+- `//bar[position() mod 2 = 0 ]`: Select even `bar` elements.
 
 The expression also can be combined using `|`:
 
-- `//foo | //bar`: select all element matching both expression
+- `//foo | //bar`: Select all element matching both expression
 
 📝 At this point you realize that using XPath is too verbose. Scrapy selectors
 allow you to chain selectors, so most of the time you can just select by class

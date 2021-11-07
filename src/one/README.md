@@ -3,11 +3,11 @@
 This is the simplest working example of a Scrapy scraper.
 
 List of the scrapers:
-- `quotes.py`: crape all the quotes from [quotes.toscrape.com](https://quotes.toscrape.com/). The most basic example.
-- `quotes_author.py`: scrape all the quotes and the author details. Featuring parsing nested page.
-- `quotes_formdata.py`: scrape all the quotes using `FormRequest` authentification.
-- `quotes_scroll.py`: scrape all the quotes from AJAX-based infinite scrolling pagination.
-- `books_category.py`: scrape all the books from [books.toscrape.com](https://books.toscrape.com/) via its category. Featuring three-level nested parsings.
+- `quotes.py`: Scrape all the quotes from [quotes.toscrape.com](https://quotes.toscrape.com/). The most basic example.
+- `quotes_author.py`: Scrape all the quotes and the author details. Featuring parsing nested page.
+- `quotes_formdata.py`: Scrape all the quotes using `FormRequest` authentification.
+- `quotes_scroll.py`: Scrape all the quotes from AJAX-based infinite scrolling pagination.
+- `books_category.py`: Scrape all the books from [books.toscrape.com](https://books.toscrape.com/) via its category. Featuring three-level nested parsings.
 
 ## Getting Started
 
