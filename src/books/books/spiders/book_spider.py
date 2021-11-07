@@ -19,7 +19,7 @@ class BookSpiderSpider(scrapy.Spider):
     def parse_book(self, response):
         title = response.css("h1::text").get()
         price = response.css(".price_color::text").get()
-        stock = response.css(".availability::text").getall()[1].rstrip().lstrip()
+        stock = response.css(".availability::text").getall()[1].strip()
 
         yield {
             "title": title,
