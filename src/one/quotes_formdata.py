@@ -7,13 +7,9 @@ class QuotesSpider(scrapy.Spider):
     start_urls = ["http://quotes.toscrape.com/login"]
 
     def parse(self, response):
-        token = response.css("form input::attr(value)").get()
-        self.logger.info(f"::: Token: {token}")
-
         return FormRequest.from_response(
             response,
             formdata={
-                "csrf_token": token,
                 "username": "albattani",
                 "password": "365days",
             },
