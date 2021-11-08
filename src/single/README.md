@@ -1,4 +1,4 @@
-# One File Scraper
+# Single File Scraper
 
 The collection of one single file scrapy scraper.
 
