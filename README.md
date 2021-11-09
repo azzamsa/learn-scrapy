@@ -27,6 +27,7 @@ This project contains the scrapers below:
 
 - [single](src/single): The collection of one single file scrapy scraper.
 - [quotes](src/quotes): A scraper for [quotes.toscrape.com](http://quotes.toscrape.com).
+- [quotes_sqlite3](src/quotes_sqlite3): A scraper with a pipeline storing items to sqlite3 database.
 - [quotes_js](src/quotes_js): A scraper for JavaScript generated content.
 - [books](src/books): A scraper for [books.toscrape.com](http://books.toscrape.com).
 - [amazon](src/amazon): A scraper for [amazon.com](http://amazon.com).

@@ -6,10 +6,10 @@
 import scrapy
 
 
-class QoutesItem(scrapy.Item):
+class QuotesSqlite3Item(scrapy.Item):
     # define the fields for your item here like:
+    author_name = scrapy.Field()
+    author_location = scrapy.Field()
+    author_date = scrapy.Field()
     text = scrapy.Field()
-    author = scrapy.Field()
-    location = scrapy.Field()
-    date = scrapy.Field()
     tags = scrapy.Field()

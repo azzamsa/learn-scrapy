@@ -1,4 +1,4 @@
-# Scrapy settings for quotes project
+# Scrapy settings for quotes_sqlite3 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "quotes"
+BOT_NAME = "quotes_sqlite3"
 
-SPIDER_MODULES = ["quotes.spiders"]
-NEWSPIDER_MODULE = "quotes.spiders"
+SPIDER_MODULES = ["quotes_sqlite3.spiders"]
+NEWSPIDER_MODULE = "quotes_sqlite3.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'quotes (+http://www.yourdomain.com)'
+# USER_AGENT = 'quotes_sqlite3 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'quotes.middlewares.QuotesSpiderMiddleware': 543,
+#    'quotes_sqlite3.middlewares.QuotesSqlite3SpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'quotes.middlewares.QuotesDownloaderMiddleware': 543,
+#    'quotes_sqlite3.middlewares.QuotesSqlite3DownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -62,9 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-    "quotes.pipelines.QuotesPipeline": 300,
-}
+# ITEM_PIPELINES = {
+#    'quotes_sqlite3.pipelines.QuotesSqlite3Pipeline': 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

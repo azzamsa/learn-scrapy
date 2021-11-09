@@ -9,7 +9,7 @@ import sqlite3
 from itemadapter import ItemAdapter
 
 
-class QuotesPipeline:
+class QuotesSqlite3Pipeline:
     def __init__(self):
         self.connect()
 
@@ -33,9 +33,9 @@ class QuotesPipeline:
             self.curr.execute(
                 "INSERT INTO author (name, date, location) values (?,?,?)",
                 (
-                    item["author"],
-                    item["date"],
-                    item["location"],
+                    item["author_name"],
+                    item["author_date"],
+                    item["author_location"],
                 ),
             )
             author_id = self.curr.lastrowid
