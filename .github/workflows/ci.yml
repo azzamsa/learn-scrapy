@@ -7,7 +7,7 @@ on:
     - main
 
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -26,13 +26,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: |
-          python -m pip install -r src/quotes/requirements.txt
-
       - name: Unit tests
         run: |
-          echo "TODO"
+          python -m pip install -r src/quotes_crawlspider/requirements.txt
+          cd src/quotes_crawlspider/ && scrapy check -v
 
 
 

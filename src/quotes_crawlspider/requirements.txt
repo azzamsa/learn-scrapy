@@ -1,3 +1,1 @@
 Scrapy==2.5.1
-itemadapter==0.4.0
-shub==2.13.0
