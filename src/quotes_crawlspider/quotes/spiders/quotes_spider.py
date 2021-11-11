@@ -16,6 +16,13 @@ class QuotesSpiderSpider(CrawlSpider):
     )
 
     def parse_page(self, response):
+        """Gathers the author details.
+
+        @url https://quotes.toscrape.com/page/1/
+        @returns items 0 1
+        @returns request 10 10
+        @scrapes author_name author_date author_location text tags
+        """
         for quote in response.css("div.quote"):
             self.logger.info(f"::: Current URL: {response.url}")
 
@@ -32,6 +39,14 @@ class QuotesSpiderSpider(CrawlSpider):
             )
 
     def parse_author(self, response, author_name, text, tags):
+        """Gathers the author details.
+
+        @url https://quotes.toscrape.com/author/Harper-Lee/
+        @cb_kwargs {"author_name": "author_name", "text": "text", "tags": "tags"}
+        @returns items 1 1
+        @returns request 0 1
+        @scrapes author_name author_date author_location text tags
+        """
         item = QuotesItem()
 
         author_date = response.css(".author-born-date::text").get()

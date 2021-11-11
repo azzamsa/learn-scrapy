@@ -6,6 +6,7 @@ A scraper for [quotes.toscrape.com](http://quotes.toscrape.com) using `CrawlSpid
 
 - [CrawlSpider](https://docs.scrapy.org/en/latest/topics/spiders.html#crawlspider).
 - [Link Extractors](https://docs.scrapy.org/en/latest/topics/link-extractors.html#topics-link-extractors).
+- [Spiders Contracts](https://docs.scrapy.org/en/latest/topics/contracts.html)
 
 ## Getting Started
 
