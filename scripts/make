@@ -19,10 +19,10 @@ verify () {
     black src/
 
     echo "::: Lint with flake8"
-    flake8 --config src/quotes/setup.cfg src/quotes
+    flake8 --config src/setup.cfg src/
 
     echo "::: Sort import with isort"
-    isort --settings-path src/quotes/setup.cfg src/quotes
+    isort --settings-path src/setup.cfg src/
 }
 
 is_verified () {
@@ -30,10 +30,10 @@ is_verified () {
     black --check src/
 
     echo "::: Is linted with flake8"
-    flake8 --config src/quotes/setup.cfg src/quotes
+    flake8 --config src/setup.cfg src/
 
     echo "::: Is sorted with isort"
-    isort --settings-path src/quotes/setup.cfg src/quotes
+    isort --settings-path src/setup.cfg src/
 
 }
 

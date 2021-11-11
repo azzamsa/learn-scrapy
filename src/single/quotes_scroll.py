@@ -3,7 +3,7 @@ import scrapy
 
 class QuotesScrollSpider(scrapy.Spider):
     name = "quotes_scroll_spider"
-    api_url = f"https://quotes.toscrape.com/api/quotes?page="
+    api_url = "https://quotes.toscrape.com/api/quotes?page="
     start_urls = [f"{api_url}1"]
 
     def parse(self, response):

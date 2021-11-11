@@ -6,7 +6,7 @@
 import sqlite3
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
+# from itemadapter import ItemAdapter
 
 
 class QuotesSqlite3Pipeline:

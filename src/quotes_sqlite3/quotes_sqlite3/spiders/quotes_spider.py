@@ -1,6 +1,5 @@
 import scrapy
 
-
 from ..items import QuotesSqlite3Item
 
 
